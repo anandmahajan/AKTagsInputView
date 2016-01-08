@@ -34,6 +34,17 @@
     return self;
 }
 
+-(void)updateLookUpTags:(NSArray *)lookupTags
+{
+    [_tagsView.collectionView performBatchUpdates:^{
+        _tagsView.selectedTags = lookupTags.mutableCopy;
+        [_tagsView.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
 -(void)filterLookupWithPredicate:(NSPredicate *)predicate
 {
 	[_tagsView.collectionView performBatchUpdates:^{

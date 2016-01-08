@@ -15,4 +15,6 @@
 @property (nonatomic, weak) id<AKTagsLookupDelegate> delegate;
 -(id)initWithTags:(NSArray*)tags;
 -(void)filterLookupWithPredicate:(NSPredicate*)predicate;
+-(void)updateLookUpTags:(NSArray *)lookupTags;
+
 @end

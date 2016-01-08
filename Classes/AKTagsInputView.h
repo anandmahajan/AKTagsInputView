@@ -17,6 +17,7 @@
 -(void)tagsInputViewDidAddTag:(AKTagsInputView*)inputView;
 -(void)tagsInputViewDidRemoveTag:(AKTagsInputView*)inputView;
 -(void)tagsInputViewDidChangeText:(NSString *)text;
+-(void)tagsInputViewDidAddTagText:(NSString *)text;
 @end
 
 @interface AKTagsInputView : AKTagsListView

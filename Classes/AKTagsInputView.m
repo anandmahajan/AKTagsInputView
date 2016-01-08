@@ -32,6 +32,12 @@
     return self;
 }
 
+-(void)setLookupTags:(NSArray *)lookupTags
+{
+    _lookupTags=lookupTags;
+    [_lookup updateLookUpTags:lookupTags];
+}
+
 #pragma mark - CV Layout
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -215,6 +221,7 @@
     }];
     if ([self.delegate respondsToSelector:@selector(tagsInputViewDidAddTag:)]){
         [self.delegate tagsInputViewDidAddTag:self];
+        [self.delegate tagsInputViewDidAddTagText:string];
     }
 }
 
