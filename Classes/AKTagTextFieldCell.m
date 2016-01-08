@@ -15,7 +15,7 @@
         _textField = [[AKTextField alloc] initWithFrame:self.contentView.bounds];
 		_textField.frame = CGRectInset(_textField.frame, 0, 5);
 		_textField.autoresizingMask = UIViewAutoresizingFlexibleHeight  | UIViewAutoresizingFlexibleWidth;
-		_textField.buttonPlaceholder = @"+ Add";
+		_textField.buttonPlaceholder = @"Add Tags";
 		_textField.autocorrectionType = UITextAutocorrectionTypeNo;
 		[self.contentView addSubview:_textField];
     }

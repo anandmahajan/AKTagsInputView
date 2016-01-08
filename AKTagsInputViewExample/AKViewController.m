@@ -9,7 +9,7 @@
 #import "AKTagsInputView.h"
 #import "AKViewController.h"
 
-@interface AKViewController ()
+@interface AKViewController ()<AKTagsInputViewDelegate>
 {
 	AKTagsInputView *_tagsInputView;
 }
@@ -25,6 +25,7 @@
 	_tagsInputView.lookupTags = @[@"ios", @"iphone", @"objective-c", @"development", @"cocoa", @"xcode", @"icloud"];
 	_tagsInputView.selectedTags = [NSMutableArray arrayWithArray:@[@"some", @"predefined", @"tags"]];
 	_tagsInputView.enableTagsLookup = YES;
+    _tagsInputView.delegate=self;
 	return _tagsInputView;
 }
 -(void)btnPressed:(id)sender
@@ -47,7 +48,10 @@
 {
 	[super viewDidAppear:animated];
 }
-
+-(void)tagsInputViewDidChangeText:(NSString *)text
+{
+     NSLog(@"newtext>>>>%@",text);
+}
 -(UIButton*)createButton
 {
 	UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(_tagsInputView.frame)+15, 290, 44)];

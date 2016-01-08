@@ -180,6 +180,7 @@
     }
     
     [self restoreZWWSIfNeeded:textField];
+    [self.delegate tagsInputViewDidChangeText:newText];
     
     return YES;
 }
